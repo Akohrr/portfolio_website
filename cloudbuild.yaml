@@ -1,10 +1,42 @@
+# steps:
+# - name: 'ubuntu'
+#   entrypoint: bash
+#   args: 
+#   - './hugo_install.sh'
+#   - 'hugo -D'
+#   - 'hugo deploy'
+
+
 steps:
-- name: 'ubuntu'
-  entrypoint: bash
-  args: 
-  - './hugo_install.sh'
-  - 'hugo -D'
-  - 'hugo deploy'
+- name: 'gcr.io/cloud-builders/git'
+  entrypoint: '/bin/sh'
+  args:
+  - '-c'
+  - |
+    # Get the theme git submodule
+    THEME_URL=$(git config -f .gitmodules --get-regexp '^submodule\..*\.url$' | awk '{ print $2 }')
+    THEME_DIR=$(git config -f .gitmodules --get-regexp '^submodule\..*\.path$' | awk '{ print $2 }')
+    rm -rf themes
+    git clone $$THEME_URL $$THEME_DIR
+- name: 'gcr.io/cloud-builders/curl'
+  entrypoint: '/bin/sh'
+  args:
+  - '-c'
+  - |
+    curl -sL https://github.com/gohugoio/hugo/releases/download/v0.95.0/hugo_0.95.0_Linux-64bit.tar.gz | tar -zxv
+    ./hugo
+    hugo -D
+    hugo deploy
+# - name: 'gcr.io/cloud-builders/wget'
+#   entrypoint: '/bin/sh'
+#   args:
+#   - '-c'
+#   - |
+#     # Get firebase CLI
+#     wget -O firebase https://firebase.tools/bin/linux/latest
+#     chmod +x firebase
+#     # Deploy site
+#     ./firebase deploy --project=$PROJECT_ID --only=hosting
 
 options:
  logging: CLOUD_LOGGING_ONLY
