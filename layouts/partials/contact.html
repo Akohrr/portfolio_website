@@ -1,0 +1,87 @@
+{{ $config := .Site.Data.config }}
+<section
+  id="contact"
+  class="bg-light d-flex align-items-center"
+  style="height: 100vh"
+>
+  <div class="container">
+    <h2 class="heading mb-3">Contact</h2>
+
+    <!-- <div class="text-success my-3">
+        {{ $config.message }}
+      </div> -->
+    <div
+      id="error_message"
+      class="text-danger"
+      style="width: 100%; height: 100%; display: none"
+    >
+      <h4>Error</h4>
+      Sorry there was an error sending your form. Try again.
+    </div>
+    <div
+      id="success_message"
+      class="text-success"
+      style="width: 100%; height: 100%; display: none"
+    >
+      <h4>Your Message was Sent Successfully!</h4>
+    </div>
+
+    <form action="." method="post" id="contact-form">
+      <div class="form-row">
+        <div class="col-12 col-xl-6 col-lg-6 col-md-6">
+          <label>Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="name"
+            placeholder="Name"
+          />
+        </div>
+        <div class="col-12 col-xl-6 col-lg-6 col-md-6">
+          <label>Email</label>
+          <input
+            type="email"
+            class="form-control"
+            name="reply-to"
+            placeholder="Email"
+          />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Message</label>
+        <textarea
+          placeholder="Message"
+          name="message"
+          class="form-control"
+          rows="4"
+        ></textarea>
+      </div>
+      <div
+        id="captcha_error_message"
+        class="text-danger"
+        style="width: 100%; height: 100%; display: none"
+      >
+        <p>Error validating Captcha. Try again.</p>
+      </div>
+
+      <div
+        class="g-recaptcha"
+        data-callback="toggleSubmitBtn"
+        data-expired-callback="toggleSubmitBtn"
+        data-error-callback="toggleCaptchaError"
+        data-sitekey="6LfdkKMfAAAAADj0Tz0kHAqKsZ9KPxT4lg3vt3SF"
+      ></div>
+      <br />
+
+      <button
+        type="submit"
+        id="contact-form-submit-btn"
+        disabled
+        class="btn btn-dark"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</section>

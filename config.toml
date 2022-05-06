@@ -1,0 +1,14 @@
+baseURL = "https://akoh.dev/"
+languageCode = "en-us"
+title = "Akoh Portfolio Website"
+
+[deployment]
+[[deployment.targets]]
+# An arbitrary name for this target.
+name = "deployment"
+# The Go Cloud Development Kit URL to deploy to. Examples:
+# GCS; see https://gocloud.dev/howto/blob/#gcs
+# URL = "gs://<Bucket Name>"
+URL= "gs://akoh.dev"
+
+

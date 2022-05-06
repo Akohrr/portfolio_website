@@ -1,0 +1,53 @@
+{
+  "title": "Professional Career",
+  "experience": [
+    {
+      "timeperiod": "Jul 2021 - Present",
+      "company": "Nationwide",
+      "position": "Software developer",
+      "location": "Columbus, OH (Remote)",
+      "companyUrl": "https://www.nationwide.com/",
+      "description": [
+        "Work as part of a team that visualizes, designs, and develops innovative software solutions for the Business Solution Area (BSA) targeting the reduction of cost and toil to BSA associates.",
+        "Utilize AWS components and tools including AWS Lambda, S3, and Code Pipeline.",
+        "Wrote test cases to improve test coverage by more than 50%."
+      ]
+    },
+    {
+      "timeperiod": "Jan 2020 - May 2021",
+      "company": "Bowling Green State University",
+      "position": "Graduate Assitant",
+      "location": "Bowling Green, OH",
+      "companyUrl": "https://www.bgsu.edu/",
+      "description": [
+        "Went above my duties to use my knowledge of programming to write Excel VB scripts to automate data processing and improve productivity by 60%.",
+        "Improved quality and process control by 20% through analyzing and documenting business processes for data systems for Graduate College Admissions.",
+        "Extensive testing of integration projects to improve reliability by up to 15%.",
+        "Assisted Professor in grading and developing elements for student assignments."
+      ]
+    },
+    {
+      "timeperiod": "Feb 2019 - Jul 2019",
+      "company": "GitStart",
+      "position": "Backend developer",
+      "location": "Remote",
+      "companyUrl": "https://www.gitstart.com/",
+      "description": [
+        "Collaborated virtually as part of a team using Tensorflow to build a custom PDF service.",
+        "Contributed heavily to the PDF service by using JavaScript/React, Python/Django to fix bugs and add new features to the web interface."
+      ]
+    },
+    {
+      "timeperiod": "Apr 2017 - Aug 2018",
+      "company": "Quanteq",
+      "position": "Software developer",
+      "location": "Abuja, NG",
+      "companyUrl": "https://www.quanteq.ng/",
+      "description": [
+        "Helped in the design of an in-house software using Python/Django to keep track of company's inventory that led to more accountability and reduced time spent on inventory by more than 15%.",
+        "Contributed in the research of the most efficient IT solutions for clients that helped cut down company costs by more than 50%.",
+        "Facilitated the deployment of Quanteq IQ (a learning management system software on raspberry pi with content from sites like Khan Academy) to remote locations with little or no internet access for offline education."
+      ]
+    }
+  ]
+}

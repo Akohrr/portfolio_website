@@ -1,0 +1,34 @@
+{{ $experience := $.Site.Data.experience }}
+
+<section id="experience" class="green">
+  <h2 class="heading">{{ $experience.title }}</h2>
+  <!-- <h6 class="h6 my-2">Click here for full version</h6> -->
+  <div id="timeline">
+    {{ range $index, $element := $experience.experience }}
+     <!-- select first 1 experience -->
+      {{ if lt $index 1 }}
+      <div class="timeline-item clearfix">
+        <div class="timeline-icon"></div>
+
+        <div
+          class="timeline-content {{ if eq (mod $index 2) 0 }} right {{ end }}"
+        >
+          <span class="date">{{ $element.timeperiod }}</span>
+          <h6 class="h3 my-2">{{ $element.company }}</h6>
+          <h6 class="h5 my-2">{{ $element.position }}</h6>
+          <ul class="list-unstyled">
+            <li>
+              <ul>
+                {{ range $index1, $desc := $element.description }}
+                    <li>{{ $desc }}</li>
+                {{end}}
+              </ul>
+            </li>
+          </ul>
+          <!-- <p class="">{{ $element.description }}</p> -->
+        </div>
+      </div>
+      {{ end }}
+    {{ end }}
+  </div>
+</section>
