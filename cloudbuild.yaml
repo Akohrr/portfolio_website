@@ -1,5 +1,6 @@
 steps:
-- name: bash
+- name: 'ubuntu'
+  entrypoint: bash
   args: 
   - './hugo_install.sh'
   - 'hugo -D'
